@@ -6,13 +6,8 @@ import Item from "./models/Product.js";
 
 const app = express();
 app.use(express.json());
-app.use(cors(corsOptions));
+app.use(cors());
 dotenv.config();
-
-const corsOptions = {
-  origin: ["http://127.0.0.1:3000", "http://localhost:3000"],
-  methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE"],
-};
 
 mongoose
   .connect(process.env.DATABASE_URL)
