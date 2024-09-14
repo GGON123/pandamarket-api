@@ -6,15 +6,11 @@ import Item from "./models/Product.js";
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(cors(corsOptions));
 dotenv.config();
 
 const corsOptions = {
-  origin: [
-    "http://127.0.0.1:3000",
-    "http://localhost:3000",
-    "https://codeit-pandamarket-by-ggon.netlify.app",
-  ],
+  origin: ["http://127.0.0.1:3000", "http://localhost:3000"],
   methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE"],
 };
 
