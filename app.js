@@ -54,8 +54,7 @@ app.get(
     const items = await Item.find(searchQuery)
       .sort(sortOption)
       .skip(offset)
-      .limit(pageSize)
-      .select("id name price createdAt tags favoriteCount");
+      .limit(pageSize);
 
     const totalItems = await Item.countDocuments(searchQuery);
 
